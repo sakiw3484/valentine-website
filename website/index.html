@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #ffe6e9;
+            font-family: Arial, sans-serif;
+            color: #d10050;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 20px;
+        }
+
+        canvas {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #d10050;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Happy Valentine's Day</h1>
+    <canvas id="threeCanvas"></canvas>
+    <button onclick="startQuiz()">Start</button>
+
+
+    <script>
+        function startQuiz() {
+            window.location.href = 'quiz.html';
+        }
+    </script>
+</body>
+
+</html>

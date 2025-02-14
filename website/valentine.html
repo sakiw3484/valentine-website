@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reasons Why I Love You</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f7c8d7, #dd7682);
+            font-family: 'Roboto', sans-serif;
+            color: #efeaec;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Main Content Styling */
+        .content {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #e16565;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+            animation: slideIn 1s ease-out;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            animation: fadeUp 1.5s ease-in-out;
+        }
+
+        .reasons {
+            display: none;
+            /* Initially hidden */
+            margin-top: 30px;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            text-align: left;
+            color: #efeaec;
+        }
+
+        .reason {
+            margin-bottom: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Button Style */
+        .btn {
+            background-color: #ffeb3b;
+            color: #333;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #f5b300;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>It's the 14th, so here's 14 reasons why I love you...</h1>
+        <p>LOL, this is really gay I know. It's also not my best work but I hope you like it. 
+            I know that our relationship has been a bit "rocky" so far, but since we first strted talking I don't think i've stoppped being obssed with you.
+            Even when i was fightinh to run away, as you can see.. i'm still here lol. I jsut want you to know how much you mean to me and how muchc I care about you.
+            I think youre the coolest person ever. So this is why I love you hoe.
+        </p>
+        <button class="btn" onclick="revealReasons()">See the Reasons</button>
+
+        <div class="reasons" id="reasons">
+            <div class="reason">1. Your kindness makes every day better.</div>
+            <div class="reason">2. You always know how to make me laugh.</div>
+            <div class="reason">3. You're always there for me when I need you.</div>
+            <div class="reason">4. You inspires me to be better.</div>
+            <div class="reason">5. Your strength keeps me going when times are tough.</div>
+            <div class="reason">6. You make even the ordinary moments feel special.</div>
+            <div class="reason">7. Your patience with me teaches me how to be more calm.</div>
+            <div class="reason">8. You make me feel safe and loved every day.</div>
+            <div class="reason">9. Your creativity amazes me every time you share something new.</div>
+            <div class="reason">10. You are so thoughtful in everything you do for me.</div>
+            <div class="reason">11. Your support means the world to me.</div>
+            <div class="reason">12. I love how adventurous you are and how you inspire me to try new things.</div>
+            <div class="reason">13. You have the ability to make everything around you beautiful.</div>
+            <div class="reason">14. You love me in a way that makes me feel like the luckiest person alive.</div>
+        </div>
+    </div>
+
+    <script>
+        function revealReasons() {
+            document.getElementById('reasons').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

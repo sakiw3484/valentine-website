@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Quiz</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: pink;
+    color: white;
+}
+
+.container {
+    margin: 50px auto;
+    padding: 20px;
+    background: red;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+}
+
+button {
+    padding: 10px 15px;
+    background: white;
+    color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.quiz-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px;
+    background: white;
+    color: red;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+</style></head>
+
+<body>
+    <div class="container">
+        <h1>How Well Do You Know Me? 💖</h1>
+        <form id="quizForm">
+            <p>1. What’s my favorite color?</p>
+            <input type="radio" name="q1" value="black"> Black<br>
+            <input type="radio" name="q1" value="blue"> Blue<br>
+            <input type="radio" name="q1" value="pink"> Pink<br>
+
+            <p>2. What’s my dream vacation spot?</p>
+            <input type="radio" name="q2" value="paris"> Alabama<br>
+            <input type="radio" name="q2" value="tokyo"> Tokyo<br>
+            <input type="radio" name="q2" value="bali"> Bali<br>
+
+            <p>3. What’s my favorite movie?</p>
+            <input type="radio" name="q3" value="chocolate"> The Incredible True Story of two girls in Love<br>
+            <input type="radio" name="q3" value="chips"> Twilight Breaking Dawn pt1<br>
+            <input type="radio" name="q3" value="cookies"> Waves<br>
+
+            <button type="button" onclick="checkQuiz(); showButton()">Submit Answers</button>
+        </form>
+        <button id="hiddenButton" style="display:none;" onclick="startValentine()">Click Me</button>
+
+        <p id="quizResult"></p>
+        <a href="index.html">Back to Main Page</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
