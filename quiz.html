@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>How Well Do You Know Me? 💖</h1>
+        <form id="quizForm">
+            <p>1. What’s my favorite color?</p>
+            <input type="radio" name="q1" value="black"> Black<br>
+            <input type="radio" name="q1" value="blue"> Blue<br>
+            <input type="radio" name="q1" value="pink"> Pink<br>
+
+            <p>2. What’s my dream vacation spot?</p>
+            <input type="radio" name="q2" value="paris"> Alabama<br>
+            <input type="radio" name="q2" value="tokyo"> Tokyo<br>
+            <input type="radio" name="q2" value="bali"> Bali<br>
+
+            <p>3. What’s my go-to snack?</p>
+            <input type="radio" name="q3" value="chocolate"> Chocolate<br>
+            <input type="radio" name="q3" value="chips"> Chips<br>
+            <input type="radio" name="q3" value="cookies"> Cookies<br>
+
+            <button type="button" onclick="checkQuiz()">Submit Answers</button>
+        </form>
+        <p id="quizResult"></p>
+        <a href="index.html">Back to Main Page</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
