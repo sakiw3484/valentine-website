@@ -15,13 +15,17 @@ function checkQuiz() {
     let answers = {
         q1: "black",     // Change this to your actual favorite color
         q2: "tokyo",     // Change this to your actual dream vacation spot
-        q3: "chocolate" // Change this to your actual go-to snack
+        q3: "chocolate", // Change this to your actual go-to snack
+        q4: "fam"
     };
 
     let userAnswers = {
         q1: document.querySelector('input[name="q1"]:checked'),
         q2: document.querySelector('input[name="q2"]:checked'),
-        q3: document.querySelector('input[name="q3"]:checked')
+        q3: document.querySelector('input[name="q3"]:checked'),
+        q4: document.querySelector('input[name="q4"]:checked')
+
+
     };
 
     for (let key in userAnswers) {
@@ -30,10 +34,12 @@ function checkQuiz() {
         }
     }
 
-    let resultMessage = `You got ${score} out of 3 right!`;
-    if (score === 3) {
+    let resultMessage = `You got ${score} out of 4 right!`;
+    if (score === 4) {
         resultMessage += " 🎉 Wow, you really know me well!";
-    } else if (score === 2) {
+    } else if (score === 3) {
+        resultMessage += " 😊 Pretty good, babe!";
+    }else if (score === 2) {
         resultMessage += " 😊 Pretty good, babe!";
     } else {
         resultMessage += " 😅 We need to spend more time together!";
