@@ -13,20 +13,45 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background-color: #ffe6e9;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff99b5, #ffe6e9);
+            font-family: 'Arial', sans-serif;
             color: #d10050;
             padding: 20px;
             box-sizing: border-box;
             text-align: center;
+            transition: background 0.5s ease;
         }
 
         h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: clamp(2rem, 8vw, 3rem);
             margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
-        h2{
-            font-size: 100px;
+
+        h2 {
+            font-size: clamp(3rem, 10vw, 5rem);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .content:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         canvas {
@@ -34,53 +59,93 @@
             max-width: 300px;
             height: auto;
             margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
         button {
-            padding: 10px 20px;
-            font-size: 1rem;
+            padding: 15px 25px;
+            font-size: clamp(1rem, 4vw, 1.25rem);
             background-color: #ff4d6d;
             color: white;
             border: none;
-            border-radius: 20px;
+            border-radius: 25px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s ease-in-out;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
         button:hover {
             background-color: #d10050;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: scale(0.95);
         }
 
         img {
-            width: 150px;
-            /* Smaller image size */
-            height: 150px;
-            /* Keep aspect ratio */
+            width: 180px;
+            height: 180px;
             object-fit: cover;
-            /* Ensures the image covers the shape */
             border-radius: 50%;
             margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            mask:
+   radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+   radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+   linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+  clip-path: polygon(-41% 0,50% 91%, 141% 0);
             
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            /* Optional: Adds a little shadow */
-             mask:
-                 radial-gradient(at 70% 31%,#000 29%,#0000 30%),
-                 radial-gradient(at 30% 31%,#000 29%,#0000 30%),
-                 linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
-                clip-path: polygon(-41% 0,50% 91%, 141% 0);
         }
-       
+
+        img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: clamp(2rem, 7vw, 2.5rem);
+            }
+
+            h2 {
+                font-size: clamp(3rem, 8vw, 4rem);
+            }
+
+            .content {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            img {
+                width: 150px;
+                height: 150px;
+            }
+
+            button {
+                padding: 12px 20px;
+                font-size: clamp(1rem, 4vw, 1.2rem);
+            }
+        }
     </style>
 </head>
 
 <body>
-    <h1>Happy Valentine's Day Angelica</h1>
-    <h2>💌</h2>
-    <canvas id="threeCanvas"></canvas>
-    <button onclick="startQuiz()">Start</button>
-
-    <!-- Example photo -->
-    <img src="images/img1.jpeg" alt="Your special photo">
+    <div class="content">
+        <h1>Happy Valentine's Day Angelica</h1>
+        <h2>💌</h2>
+        <button onclick="startQuiz()">Start</button>
+        <!-- Example photo -->
+        <img src="images/img1.jpeg" alt="Your special photo">
+    </div>
 
     <!-- Load Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -89,7 +154,6 @@
         function startQuiz() {
             window.location.href = 'quiz.html';
         }
-
     </script>
 </body>
 
