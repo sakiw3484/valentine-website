@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day
-    </title>
+    <title>Happy Valentine's Day</title>
     <style>
         body {
             margin: 0;
@@ -19,6 +18,7 @@
             color: #d10050;
             padding: 20px;
             box-sizing: border-box;
+            text-align: center;
         }
 
         h1 {
@@ -30,6 +30,7 @@
             width: 100%;
             max-width: 300px;
             height: auto;
+            margin-bottom: 20px;
         }
 
         button {
@@ -46,20 +47,74 @@
         button:hover {
             background-color: #d10050;
         }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Happy Valentine's Day Angelica
-</h1>
+    <h1>Happy Valentine's Day Angelica</h1>
     <canvas id="threeCanvas"></canvas>
     <button onclick="startQuiz()">Start</button>
 
+    <!-- Example photo -->
+    <img src="path/to/your/photo.jpg" alt="Your special photo">
+
+    <!-- Load Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <script>
         function startQuiz() {
             window.location.href = 'quiz.html';
         }
+
+        // Set up Three.js scene for animated heart
+        var scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xFFE6E9);  // Set background color to match page color
+
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('threeCanvas') });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        // Heart shape definition
+        const x = 0, y = 0;
+
+        const heartShape = new THREE.Shape();
+        heartShape.moveTo(x + 5, y + 5);
+        heartShape.bezierCurveTo(x + 5, y + 5, x + 4, y, x, y);
+        heartShape.bezierCurveTo(x - 6, y, x - 6, y + 7, x - 6, y + 7);
+        heartShape.bezierCurveTo(x - 6, y + 11, x - 3, y + 15.4, x + 5, y + 19);
+        heartShape.bezierCurveTo(x + 12, y + 15.4, x + 16, y + 11, x + 16, y + 7);
+        heartShape.bezierCurveTo(x + 16, y + 7, x + 16, y, x + 10, y);
+        heartShape.bezierCurveTo(x + 7, y, x + 5, y + 5, x + 5, y + 5);
+
+        const geometry = new THREE.ShapeGeometry(heartShape);
+        const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+        const mesh = new THREE.Mesh(geometry, material);
+
+        scene.add(mesh);
+
+        // Scale the heart to make it smaller
+        mesh.scale.set(0.15, 0.15, 0.15);  // Scale it down to 15%
+
+        // Position the heart shape and camera
+        mesh.position.set(0, 0, 0);
+        camera.position.z = 2;  // Move the camera closer to fit the smaller heart
+
+        // Animation for the heart shape
+        function animate() {
+            requestAnimationFrame(animate);
+            mesh.rotation.x += 0.01;
+            mesh.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+
+        animate();
     </script>
 </body>
 
