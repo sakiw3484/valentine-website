@@ -60,12 +60,19 @@
             
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             /* Optional: Adds a little shadow */
+             mask:
+                 radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+                 radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+                 linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+                clip-path: polygon(-41% 0,50% 91%, 141% 0);
         }
+       
     </style>
 </head>
 
 <body>
     <h1>Happy Valentine's Day Angelica</h1>
+    <h2>❤️❤️</h2>
     <canvas id="threeCanvas"></canvas>
     <button onclick="startQuiz()">Start</button>
 
